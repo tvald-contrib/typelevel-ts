@@ -107,6 +107,9 @@ const stringEq3: t.StringEq<'', ''> = 'T'
 const objectHasKey1: t.ObjectHasKey<{ a: number }, 'a'> = 'T'
 const objectHasKey2: t.ObjectHasKey<{ a: number }, 'b'> = 'F'
 
+const objectHasKeys1: t.ObjectHasKeys<{ a: number }> = 'T'
+const objectHasKeys2: t.ObjectHasKeys<{}> = 'F'
+
 type State = { a: string; b: boolean; c: number }
 
 export type E1 = t.PickExact<State, 'c'> | t.PickExact<State, 'a' | 'b'>

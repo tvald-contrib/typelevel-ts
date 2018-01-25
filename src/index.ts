@@ -164,6 +164,8 @@ export type StringContains<S extends string, L extends string> = ({ [K in S]: 'T
 
 export type ObjectHasKey<O, L extends string> = StringContains<keyof O, L>
 
+export type ObjectHasKeys<O> = ObjectHasKey<O, keyof O>
+
 export type ObjectOverwrite<O1, O2> = Pick<O1, StringOmit<keyof O1, keyof O2>> & O2
 
 export type ObjectOmit<O, K extends string> = Pick<O, StringOmit<keyof O, K>>
